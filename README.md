@@ -7,19 +7,31 @@ This is a personal side project that doing image recognition by using captions i
   - Return a list of most likely description for the image.
 <br>
 
+This is done by:
+
+ 1. Using google reverse image to look up given url.
+ 2. Find list of similar images.
+ 3. Extract result images captions and title names.
+ 4. Clean and parse the image information to get final frequent rank.
+
+
+###Examples:
 ![Google owned Boston Dynamics Robot Wildcat ](http://www.blogcdn.com/www.engadget.com/media/2012/09/boston-dynamics-alphadog-ls3-darpa-demo.jpg)
 <br>
+url:http://www.blogcdn.com/www.engadget.com/media/2012/09/boston-dynamics-alphadog-ls3-darpa-demo.jpg<br>
 Top three results: **robot, military, google**
 
 <br> 
  ![Lionel Messi](http://i0.wp.com/akihabarablues.com/wp-content/uploads/2015/09/messi1.jpg)
 <br>
+url:http://i0.wp.com/akihabarablues.com/wp-content/uploads/2015/09/messi1.jpg<br>
 Top three results: **messi, lionel, barcelona**
 
 
 <br>
 ![Rei Ayanami from Evangelion ](http://vignette1.wikia.nocookie.net/evangelion/images/1/12/Rei_Ayanami_OP.png)
 <br>
+url:http://vignette1.wikia.nocookie.net/evangelion/images/1/12/Rei_Ayanami_OP.png<br>
 Top three results: **rei, evangelion , ayanami**
  
 
