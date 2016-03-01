@@ -4,15 +4,15 @@ This is a personal side project that doing image recognition by using captions i
 
 ###About
   - Given an url for any image.
-  - Return a list of most likely description for the image.
+  - Return a list of most likely descriptions for the image.
 <br>
 
 This is done by:
 
  1. Using google reverse image to look up given url.
  2. Find list of similar images.
- 3. Extract result images captions and title names.
- 4. Clean and parse the image information to get final frequent rank.
+ 3. Extract result images captions and title info.
+ 4. Clean and parse the image info to get final frequency rank.
 
 
 ###Examples:
