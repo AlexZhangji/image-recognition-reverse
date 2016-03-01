@@ -1,11 +1,10 @@
 import collections
 import re
+import time
 import urllib2
 
+
 # return html data for given url
-import time
-
-
 def get_page_by_url(url):
     headers = {}
     headers[
@@ -18,13 +17,13 @@ def get_page_by_url(url):
 
 def get_img_caps_list(given_img_url):
     url = 'https://www.google.com/searchbyimage?&image_url=' + given_img_url
-    time.sleep(1)
+    time.sleep(.1)
     print('reverse search: ' + url)
 
-    # parse source
+    # parse reverse image look up page
     source = get_page_by_url(url)
 
-    # get url for "more visually similar images"
+    # get url for "more visually similar images" page
     similar_img_url = source.split('">Visually similar images')[0].split('<a href="')[-1]
     more_img_url = 'https://www.google.com' + similar_img_url
     more_img_url = ''.join(more_img_url.split('amp;'))
@@ -33,10 +32,9 @@ def get_img_caps_list(given_img_url):
     # list of all images caps
     list_caps = []
 
-    # parse similar image page
+    # parse to get list of similar image page
     try:
         res_page = get_page_by_url(more_img_url)
-        # sleep(2)
         if 'class="rg_di' in res_page:
 
             # in case want to limit num of images
@@ -57,10 +55,10 @@ def get_img_caps_list(given_img_url):
                 num_image += 1
 
                 # to get rid of some edge cases
-                if len(img_cap) < 4009999:
+                if len(img_cap) < 400:
                     # clean captions
                     img_cap = re.sub('\W', ' ', img_cap)
-                    # u0026 39 is eqivalent to '
+                    # u0026 39 is equivalent to '
                     img_cap = ''.join(img_cap.split('u0026 39'))
                     # clear multiple whitespace
                     img_cap = ' '.join(img_cap.split())
