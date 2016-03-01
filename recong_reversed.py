@@ -43,7 +43,7 @@ def get_img_caps_list(given_img_url):
             # print('len:' + str(len(img_data_list)))
 
             while num_image < len(img_data_list) - 1:
-                # while num_image < 20:
+            # while num_image < 20:
                 cur_data = img_data_list[num_image + 1]
                 # parse list and get title info
                 img_cap = cur_data.split('","s":"')[1].split('","th":')[0]
@@ -73,6 +73,11 @@ def get_img_caps_list(given_img_url):
 
 # given_img_url = 'http://vignette1.wikia.nocookie.net/evangelion/images/1/12/Rei_Ayanami_OP.png/revision/latest?cb=20120608122803'
 given_img_url = 'http://www.blogcdn.com/www.engadget.com/media/2012/09/boston-dynamics-alphadog-ls3-darpa-demo.jpg'
-img_caps_list = get_page_by_url(given_img_url)
+img_caps_list = get_img_caps_list(given_img_url)
+
+# clean data
+import clean_data
+
+img_caps_list = clean_data.clean_data_(img_caps_list)
 counter = collections.Counter(img_caps_list)
 print(counter.most_common())
