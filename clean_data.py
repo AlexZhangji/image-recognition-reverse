@@ -16,7 +16,7 @@ def clean_data_(data):
 
     singular_data = []
     # get rid of singular and plural forms
-    sentence = TextBlob(' '.join(data))
+    sentence = TextBlob(' '.join(new_data))
     for i in range(len(sentence.words) - 1):
         singular_data.append(sentence.words[i].singularize())
 
