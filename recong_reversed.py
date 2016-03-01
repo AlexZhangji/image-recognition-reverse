@@ -64,7 +64,7 @@ def get_img_caps_list(given_img_url):
                     img_cap = ''.join(img_cap.split('u0026 39'))
                     # clear multiple whitespace
                     img_cap = ' '.join(img_cap.split())
-                    print('link: ' + img_cap)
+                    # print('link: ' + img_cap)
 
                     # add cleaned caps to list
                     for word in img_cap.split():
