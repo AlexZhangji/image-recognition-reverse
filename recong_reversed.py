@@ -76,8 +76,8 @@ def get_img_caps_list(given_img_url):
     return list_caps
 
 
-given_img_url = 'http://i0.wp.com/akihabarablues.com/wp-content/uploads/2015/09/messi1.jpg'
-# given_img_url = 'http://vignette1.wikia.nocookie.net/evangelion/images/1/12/Rei_Ayanami_OP.png/revision/latest?cb=20120608122803'
+# given_img_url = 'http://i0.wp.com/akihabarablues.com/wp-content/uploads/2015/09/messi1.jpg'
+given_img_url = 'http://vignette1.wikia.nocookie.net/evangelion/images/1/12/Rei_Ayanami_OP.png/revision/latest?cb=20120608122803'
 # given_img_url = 'http://www.blogcdn.com/www.engadget.com/media/2012/09/boston-dynamics-alphadog-ls3-darpa-demo.jpg'
 img_caps_list = get_img_caps_list(given_img_url)
 
